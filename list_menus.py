@@ -22,12 +22,9 @@ def list_menu(num=1000):
 
 print(list_menu())
 
-# creating a custom menu item for the users automation scripts
-menus = unreal.ToolMenus.get()
-main_menu = menus.find_menu("LevelEditor.MainMenu") # type: ignore
-custom_menu = main_menu.add_sub_menu("Custom Menu", "Python Automation", "Menu Name", "Automation") # type: ignore
-menus.refresh_all_widgets()
-
+automation_menu = tool_menus.find_menu(unreal.Name("LevelEditor.MainMenu.PythonAutomation"))
+automation_menu_path = "LevelEditor.MainMenu.PythonAutomation"
+found_automation_menu = tool_menus.find_menu(unreal.Name(automation_menu_path))
 
 MENUS = {
 'ContentBrowser.AssetContextMenu.MirrorDataTable',
