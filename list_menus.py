@@ -22,10 +22,6 @@ def list_menu(num=1000):
 
 print(list_menu())
 
-automation_menu = tool_menus.find_menu(unreal.Name("LevelEditor.MainMenu.PythonAutomation"))
-automation_menu_path = "LevelEditor.MainMenu.PythonAutomation"
-found_automation_menu = tool_menus.find_menu(unreal.Name(automation_menu_path))
-
 MENUS = {
 'ContentBrowser.AssetContextMenu.MirrorDataTable',
 'SourceControl.ChangelistContextMenu',
