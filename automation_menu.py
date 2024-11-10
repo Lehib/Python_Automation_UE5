@@ -106,17 +106,25 @@ main_menu = tool_menus.find_menu(unreal.Name("LevelEditor.MainMenu"))
 # Add the "Automation" sub-menu
 automation_menu = main_menu.add_sub_menu(
     owner=unreal.Name("PythonAutomation"),
-    section_name=unreal.Name("General"),
+    section_name=unreal.Name(""),
     name=unreal.Name("PythonAutomation"),
     label=unreal.Text("Automation"), 
     tool_tip=unreal.Text("Python automation scripts")
     )
 
+# create General section separator
+general_separator = unreal.ToolMenuEntry(name=unreal.Name("General"), type=unreal.MultiBlockType.SEPARATOR)
+automation_menu.add_menu_entry(unreal.Name("General"), general_separator)
+general_separator.set_label(unreal.Text("General"))
+
+assets_separator = unreal.ToolMenuEntry(name=unreal.Name("Assets"), type=unreal.MultiBlockType.SEPARATOR)
+automation_menu.add_menu_entry(unreal.Name("Assets"), assets_separator)
+
 # Create an instance of SetPrefix
-script_object = SetPrefix()
+prefix_script_object = SetPrefix()
 
 # Initialize the entry in the custom menu
-script_object.init_entry(
+prefix_script_object.init_entry(
     owner_name=unreal.Name("PythonAutomation"),
     menu=unreal.Name("LevelEditor.MainMenu.PythonAutomation"),
     section=unreal.Name("General"),
@@ -125,7 +133,7 @@ script_object.init_entry(
     tool_tip=unreal.Text("Set the prefixes for assets in the Content Browser")
 )
 
-script_object.register_menu_entry()
+prefix_script_object.register_menu_entry()
 
 # Refresh menu to update changes
 tool_menus.refresh_all_widgets()
