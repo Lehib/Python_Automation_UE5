@@ -6,6 +6,7 @@ class Prefix(StrEnum):
     MATERIAL = "M_"
     MATERIAL_INSTANCE_CONSTANT = "MI_"
     BLUEPRINT = "BP_"
+    STATIC_MESH = "SM_"
 
 @unreal.uclass()
 class SetPrefix(unreal.ToolMenuEntryScript):
@@ -16,11 +17,13 @@ class SetPrefix(unreal.ToolMenuEntryScript):
         unreal.Material: Prefix.MATERIAL,
         unreal.MaterialInstanceConstant: Prefix.MATERIAL_INSTANCE_CONSTANT,
         unreal.Blueprint: Prefix.BLUEPRINT,
+        unreal.StaticMesh: Prefix.STATIC_MESH
     }
     EXISTING_PREFIXES = {
         Prefix.TEXTURE2D,
         Prefix.MATERIAL,
         Prefix.MATERIAL_INSTANCE_CONSTANT,
+        Prefix.STATIC_MESH,
         Prefix.BLUEPRINT,
         "Blueprint",
         "blueprint",
