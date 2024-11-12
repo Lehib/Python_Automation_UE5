@@ -9,7 +9,7 @@
         This script will assess whether your assets have the correct prefix for organisation purposes, and if not it will dynamically set them. Currently it will work for textures, materials, material instances, blueprints and has a special process for post process materials.
 
    **Fix Texture Compression**
-        This will analyse the textures within the Content Browser and determine whether they're using the optimal texture compression settings, it is based on the suffixes found at https://gist.github.com/excalith/366e15b13c1c99539aa2600ff3d5e647#textures but has been extended to include ORD maps (Occlusion, Roughness, Displacement)
+        This will analyse the textures within the Content Browser and determine whether they're using the optimal texture compression settings, it is based on the suffixes found at https://gist.github.com/excalith/366e15b13c1c99539aa2600ff3d5e647#textures but has been extended to include ORD maps (Occlusion, Roughness, Displacement).
 
 All functionality may potentially be extended over time, if you encounter any bugs or strange behaviour or just have feedback please feel free to get in touch! 
 
